@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>রঙমহল - Houseboat Of STM</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*:before,*:after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;padding-bottom:env(safe-area-inset-bottom,0px);font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif}
+[hidden]{display:none!important}
+#nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;justify-content:center;padding:calc(8px + env(safe-area-inset-top,0px)) 12px 8px;background:#0f766e}
+#nav button{flex:1;max-width:200px;padding:9px;border:0;border-radius:20px;background:rgba(255,255,255,.18);color:#fff;font:inherit;font-size:14px;font-weight:600}
+#nav button.on{background:#fff;color:#0f766e}
+#home{box-sizing:border-box;
+--bg:#f6f3ec;--card:#fff;--ink:#14323a;--mute:#5b6f74;--accent:#0f766e;--accent2:#c2410c;--line:#d8d2c4;--room:#e9f1ef}
+@media (prefers-color-scheme:dark){#home{--bg:#0e1a1d;--card:#15262a;--ink:#e8f1f0;--mute:#9fb4b6;--accent:#2dd4bf;--accent2:#fb923c;--line:#2b4146;--room:#1c3237}}
+#home{margin:0;background:var(--bg);color:var(--ink);font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;line-height:1.7;min-height:100vh}
+#home .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+#home header.hero{padding:56px 0 40px;text-align:center;background:linear-gradient(180deg,var(--room),var(--bg))}
+#home .hero .emoji{font-size:52px}
+#home h1{font-size:2.4rem;margin:8px 0 4px}
+#home .hero p{color:var(--mute);font-size:1.1rem;margin:0 auto;max-width:34em}
+#home .btn{display:inline-block;margin-top:22px;background:var(--accent);color:var(--bg);padding:11px 26px;border-radius:999px;text-decoration:none;font-weight:600;border:0;font:inherit;font-weight:600;cursor:pointer}
+#home section{padding:34px 0}
+#home h2{font-size:1.5rem;margin:0 0 14px;border-left:5px solid var(--accent2);padding-left:10px}
+#home .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:560px){#home .stats{grid-template-columns:repeat(4,1fr)}}
+#home .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+#home .stat b{display:block;font-size:1.6rem;color:var(--accent)}
+#home .stat span{color:var(--mute);font-size:.9rem}
+#home .feat{display:grid;gap:12px}
+@media(min-width:560px){#home .feat{grid-template-columns:1fr 1fr}}
+#home .f{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+#home .f b{display:block;margin-bottom:2px}
+#home .f span{color:var(--mute);font-size:.95rem}
+#home .plan{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;max-width:360px;margin:0 auto}
+#home .deck{display:grid;grid-template-columns:1fr .42fr 1fr;gap:4px}
+#home .deck>div,#home .deck>button{border:1.5px solid var(--ink);background:var(--room);color:var(--ink);font:inherit;font-size:.85rem;display:flex;align-items:center;justify-content:center;text-align:center;padding:6px 2px;min-height:44px;border-radius:4px}
+#home .bow{grid-column:1/-1;min-height:70px!important;border-radius:60px 60px 4px 4px!important;font-weight:600}
+#home .lounge{grid-column:1/-1;min-height:60px!important}
+#home .gap{background:transparent!important;border:0!important;border-left:1.5px dashed var(--line)!important;border-right:1.5px dashed var(--line)!important}
+#home .deck .bunk{cursor:pointer;background:var(--card);font-weight:700;min-height:56px}
+#home .deck .bunk.on{background:var(--accent);color:var(--bg)}
+#home .deck .bunk:focus-visible{outline:3px solid var(--accent2)}
+#home .balc{grid-column:1/-1;background:transparent!important;border-style:double!important}
+#home #info{margin:16px auto 0;max-width:360px;text-align:center;color:var(--mute);min-height:3.4em}
+#home #info b{color:var(--ink)}
+#home footer{padding:30px 0 40px;text-align:center;color:var(--mute);border-top:1px solid var(--line);font-size:.95rem}
+#book{--bg:#eef3f2;--card:#fff;--tx:#14262b;--mu:#66787c;--pri:#0f766e;--bd:#d6e0de;--red:#e5484d;--grn:#2e9e5b;--sh:0 2px 12px rgba(10,60,55,.09);box-sizing:border-box;}
+@media (prefers-color-scheme:dark){#book{--bg:#0d1a1c;--card:#16292d;--tx:#e9f2f1;--mu:#9bb0b2;--bd:#2b4247;--sh:0 2px 12px rgba(0,0,0,.4)}}
+#book{margin:0;background:var(--bg);color:var(--tx);font-family:"Hind Siliguri",system-ui,"Noto Sans Bengali",sans-serif;min-height:100vh}
+#book header{position:relative;background:linear-gradient(135deg,#0f766e,#0e9488 70%,#2bb3a3);color:#fff;text-align:center;padding:18px 12px 20px;border-radius:0 0 26px 26px;box-shadow:0 6px 20px rgba(15,118,110,.35)}
+#book .logo{font-size:34px}
+#book header h1{margin:0;font-size:21px}
+#book header p{margin:2px 0 0;font-size:13px;opacity:.9}
+#book main{max-width:560px;margin:0 auto;padding:14px 12px 30px}
+#book .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+#book .stats div{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 4px;text-align:center;font-size:12px;color:var(--mu);box-shadow:var(--sh)}
+#book .stats b{display:block;font-size:18px;color:var(--tx);margin-top:2px}
+#book .tabs{display:flex;gap:8px;margin-bottom:12px}
+#book .tab{flex:1;padding:10px 8px;border:1px solid var(--bd);border-radius:22px;background:var(--card);color:var(--tx);font:inherit;font-size:14px;font-weight:500;box-shadow:var(--sh)}
+#book .tab.on{background:linear-gradient(135deg,#0f766e,#0e9488);border-color:transparent;color:#fff;font-weight:600}
+#book .card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:14px;box-shadow:var(--sh)}
+#book .info{font-size:14px;color:var(--mu);margin:0 4px 10px;font-weight:500}
+#book .boat{border-radius:60px 60px 18px 18px;border:2px solid var(--bd);padding:16px 12px;background:linear-gradient(180deg,var(--card),var(--bg))}
+#book .grid{display:grid;grid-template-columns:1fr .42fr 1fr;gap:7px}
+#book .gp{border-left:1.5px dashed var(--bd);border-right:1.5px dashed var(--bd)}
+#book .bow{padding:22px 0;border-radius:50px 50px 8px 8px}
+#book .lbl.sm{grid-column:auto;display:flex;align-items:center;justify-content:center;padding:12px 4px}
+#book .lbl.bal{border-style:double}
+#book .lbl{grid-column:1/-1;text-align:center;padding:9px 0;font-weight:600;font-size:14px;border-radius:12px;background:var(--bg);border:1px dashed var(--bd);color:var(--mu)}
+#book .room{height:58px;border:1.5px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit;font-weight:700;font-size:15px;padding:0;box-shadow:inset 0 -5px 0 rgba(0,0,0,.07)}
+#book .room:active{transform:scale(.94)}
+#book .room small{display:block;font-size:10px;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding:0 3px}
+#book #lo{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.22);color:#fff;border:0;border-radius:20px;padding:6px 12px;font:inherit;font-size:13px}
+#book .room.bkd{background:#f5a524;border-color:#f5a524;color:#fff}
+#book .room.paid{background:var(--grn);border-color:var(--grn);color:#fff}
+#book .room.due{background:var(--red);border-color:var(--red);color:#fff}
+#book .key{display:flex;gap:14px;justify-content:center;font-size:12px;color:var(--mu);margin-top:12px}
+#book .key i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:4px;vertical-align:-1px;border:1px solid var(--bd)}
+#book h2{font-size:16px;margin:0 0 10px}
+#book .row{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--bd);font-size:14px}
+#book .row:last-child{border:0}
+#book .row span{color:var(--mu)}
+#book .empty{color:var(--mu);font-size:14px;text-align:center;padding:8px}
+#book #ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:10}
+#book #ov.on{display:flex}
+#book .sheet{background:var(--card);width:100%;max-width:560px;border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:90%;overflow:auto}
+#book .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+#book .opt{padding:12px 6px;border:1.5px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit;font-size:15px;font-weight:500}
+#book .opt.on{background:var(--pri);border-color:var(--pri);color:#fff;font-weight:700}
+#book label{display:block;font-size:13px;color:var(--mu);margin:10px 0 4px}
+#book input{width:100%;padding:11px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit;font-size:16px}
+#book .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#book .btns{display:flex;gap:8px;margin-top:16px}
+#book .btns button{flex:1;padding:12px;border-radius:12px;border:0;font:inherit;font-weight:600;font-size:15px}
+#book #sv{background:var(--pri);color:#fff}
+#book #cl{background:var(--red);color:#fff}
+#book #cx{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}
+</style></head>
+<body>
+<div id="nav"><button data-v="home">🏠 হোম</button><button data-v="book">📒 রুম বুক ও হিসাব</button></div>
+<div id="home">
+<header class="hero"><div class="wrap">
+<div class="emoji">🚢</div>
+<h1>রঙমহল - Houseboat Of STM</h1>
+<p>৭২ ফুটের এক আরামদায়ক ভাসমান বাড়ি। নদীর বুকে ভেসে কাটান শান্ত, স্মরণীয় কিছু দিন।</p>
+<a class="btn" href="#cabin">কেবিন দেখুন</a>
+</div></header>
+
+<main class="wrap">
+<section>
+<h2>এক নজরে</h2>
+<div class="stats">
+<div class="stat"><b>৭২'</b><span>দৈর্ঘ্য</span></div>
+<div class="stat"><b>২০'</b><span>প্রস্থ</span></div>
+<div class="stat"><b>৮</b><span>রুম</span></div>
+<div class="stat"><b>১টি</b><span>খোলা লাউঞ্জ</span></div>
+</div>
+</section>
+
+<section>
+<h2>সুবিধাসমূহ</h2>
+<div class="feat">
+<div class="f"><b>🛋️ খোলা লাউঞ্জ</b><span>সামনের দিকে ২০ × ১০ ফুটের প্রশস্ত ঘর। আড্ডা, খাওয়া বা নদী দেখার জন্য।</span></div>
+<div class="f"><b>🛏️ আটটি কেবিন</b><span>প্রতিটি ৮ × ১০ ফুট, করিডরের দুই পাশে চারটি করে।</span></div>
+<div class="f"><b>🍳 রান্নাঘর</b><span>পেছনে ইঞ্জিন ও রান্নাঘর, তাজা খাবারের ব্যবস্থা।</span></div>
+<div class="f"><b>🌅 ব্যাক ব্যালকনি</b><span>জাহাজের পেছনে খোলা ব্যালকনি, সূর্যাস্ত দেখার সেরা জায়গা।</span></div>
+</div>
+</section>
+
+<section id="cabin">
+<h2>ডেক প্ল্যান</h2>
+<p style="color:var(--mute);margin-top:0">যেকোনো রুমে ট্যাপ করুন।</p>
+<div class="plan">
+<div class="deck" id="deck">
+<div class="bow">সামনে (Front)</div>
+<div class="lounge">খোলা লাউঞ্জ</div>
+<button class="bunk" data-b="1">২০১</button><div class="gap"></div><button class="bunk" data-b="3">২০৩</button>
+<button class="bunk" data-b="2">২০২</button><div class="gap"></div><button class="bunk" data-b="4">২০৪</button>
+<button class="bunk" data-b="5">২০৫</button><div class="gap"></div><button class="bunk" data-b="7">২০৭</button>
+<button class="bunk" data-b="6">২০৬</button><div class="gap"></div><button class="bunk" data-b="8">২০৮</button>
+<div>স্টাফ রুম</div><div class="gap"></div><div>ইঞ্জিন / রান্নাঘর</div>
+<div class="balc">ব্যাক ব্যালকনি</div>
+</div>
+</div>
+<div id="info">রুম বেছে নিন।</div>
+</section>
+
+<section>
+<h2>যোগাযোগ</h2>
+<p>ভ্রমণ বা বুকিংয়ের জন্য আমাদের জানান। ফোন ও ইমেইল শিগগিরই এখানে যোগ হবে।</p>
+</section>
+</main>
+<footer>© রঙমহল। নদীর বুকে আপনাকে স্বাগতম।</footer>
+
+</div>
+<div id="book" hidden>
+<header><button id="lo">অ্যাডমিন লগইন</button><div class="logo">🚢</div><h1>রঙমহল - Houseboat Of STM</h1><p id="md">অতিথি মোড – শুধু বুকিং</p></header>
+<main>
+<div class="stats">
+<div>বুকড রুম<b id="s1">০/৮</b></div>
+<div>মোট আয়<b id="s2">৳০</b></div>
+<div>বাকি<b id="s3">৳০</b></div>
+</div>
+<div class="tabs" id="tabs"></div>
+<div class="card" style="padding:10px 14px"><label style="margin:0 0 4px">ইভেন্টের নাম</label><input id="en" placeholder="যেমন: ঈদ ট্যুর, পূর্ণিমা রাত"><label style="margin:10px 0 4px">এই ইভেন্টের চেক-ইন তারিখ <span id="tn" style="color:var(--mu)"></span></label><input id="td" type="date"></div>
+<div class="card">
+<p class="info">রুমে ট্যাপ করে বুকিং যোগ করুন</p>
+<div class="boat"><div class="grid" id="g"></div>
+<div class="key"><span><i style="background:var(--card)"></i>খালি</span><span><i style="background:#f5a524"></i>বুকড</span><span><i style="background:var(--grn)"></i>পরিশোধিত</span><span><i style="background:var(--red)"></i>বাকি আছে</span></div></div>
+</div>
+<div class="card"><h2>বুকিং তালিকা</h2><div id="ls"></div></div>
+</main>
+
+<div id="ov"><div class="sheet">
+<h2 id="tt"></h2>
+<label>বুকিং ধরন</label><div class="opts"><button type="button" class="opt on" data-k="কাপল">১. কাপল</button><button type="button" class="opt" data-k="শেয়ার বেসিস">২. শেয়ার বেসিস</button></div>
+<label>অতিথির নাম</label><input id="nm">
+<label>মোবাইল</label><input id="ph" type="tel" inputmode="tel">
+<label>চেক-ইন তারিখ (ইভেন্ট অনুযায়ী)</label><input id="dt" type="date" disabled>
+<div class="two" id="money"><div><label>মোট টাকা</label><input id="tot" type="number" inputmode="numeric"></div>
+<div><label>জমা</label><input id="pd" type="number" inputmode="numeric"></div></div>
+<div class="btns"><button id="cx">বাতিল</button><button id="cl">মুছুন</button><button id="sv">সেভ</button></div>
+</div></div>
+
+</div>
+<script>
+(function(){
+var n=["২০১","২০২","২০৩","২০৪","২০৫","২০৬","২০৭","২০৮"];
+document.querySelectorAll(".bunk").forEach(function(b){
+b.addEventListener("click",function(){
+document.querySelectorAll(".bunk").forEach(function(x){x.classList.remove("on")});
+b.classList.add("on");
+var i=+b.dataset.b,side=i%4===1||i%4===2?"বাম":"ডান";
+document.getElementById("info").innerHTML="<b>রুম "+n[i-1]+"</b><br>"+side+" পাশে, করিডরের দিকে দরজা। আকার ৮ × ১০ ফুট।";
+});
+});
+})();
+(function(){
+var ADMIN_PIN="1234",admin=false;
+var $=function(i){return document.getElementById(i)};
+var ROOMS=[201,202,203,204,205,206,207,208],KEY="rongmohol_trips_v2",trips=[{name:"ইভেন্ট ১",bk:{}},{name:"ইভেন্ট ২",bk:{}}],ti=0,data,cur=null,kind="কাপল";
+function setKind(k){kind=k;document.querySelectorAll(".opt").forEach(function(o){o.classList.toggle("on",o.dataset.k===k)})}
+document.querySelectorAll(".opt").forEach(function(o){o.onclick=function(){setKind(o.dataset.k)}});
+function bn(n){return String(n).replace(/\d/g,function(d){return "০১২৩৪৫৬৭৮৯"[d]})}
+function tk(n){return "৳"+bn(Math.round(n).toLocaleString("en-US"))}
+try{var sv=JSON.parse(localStorage.getItem(KEY)||"null");if(sv&&sv.length==2)trips=sv;else{var old=JSON.parse(localStorage.getItem("rongmohol_bookings_v1")||"null");if(old)trips[0].bk=old}}catch(e){}
+data=trips[0].bk;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(trips))}catch(e){}}
+function tabs(){$("tabs").innerHTML=trips.map(function(t,i){return '<button class="tab'+(i===ti?' on':'')+'" data-i="'+i+'">'+(t.name.trim()||"ইভেন্ট "+bn(i+1)).replace(/</g,"&lt;")+(t.dt?" · "+bn(t.dt.split("-").reverse().join("/")):"")+'</button>'}).join("")}
+$("tabs").onclick=function(e){var b=e.target.closest(".tab");if(!b)return;var i=+b.dataset.i;
+if(i!==ti){ti=i;data=trips[i].bk}
+tabs();render()};
+function btn(r){
+var b=data[r],c="room",s=bn(r);
+if(b){c+=(!admin||!b.tot)?" bkd":((b.tot-b.pd>0)?" due":" paid");s+="<small>"+(b.nm||"বুকড").replace(/</g,"&lt;")+"</small>"}
+return '<button class="'+c+'" data-r="'+r+'">'+s+'</button>'}
+function render(){
+$("en").value=trips[ti].name;$("en").disabled=!admin;
+$("td").value=trips[ti].dt||"";$("td").disabled=!admin;$("tn").textContent=admin?"":"(অ্যাডমিন ঠিক করবেন)";
+var R=ROOMS,h='<div class="lbl bow">সামনে (Front)</div><div class="lbl">খোলা লাউঞ্জ</div>',G='<div class="gp"></div>';
+h+=btn(R[0])+G+btn(R[2])+btn(R[1])+G+btn(R[3])+btn(R[4])+G+btn(R[6])+btn(R[5])+G+btn(R[7]);
+h+='<div class="lbl sm">স্টাফ রুম</div>'+G+'<div class="lbl sm">ইঞ্জিন / রান্নাঘর</div><div class="lbl bal">ব্যাক ব্যালকনি</div>';
+$("g").innerHTML=h;
+var n=0,t=0,p=0,l="";
+ROOMS.forEach(function(r){var b=data[r];if(!b)return;n++;t+=b.tot;p+=b.pd;
+l+='<div class="row"><div><b>রুম '+bn(r)+'</b> · '+(b.nm||"নাম নেই").replace(/</g,"&lt;")+'<br><span>'+(b.kind||"কাপল")+(b.ph?" · "+b.ph:"")+'</span></div>'+(admin?'<div style="text-align:right">'+tk(b.tot)+'<br><span>বাকি '+tk(b.tot-b.pd)+'</span></div>':'')+'</div>'});
+$("s1").textContent=bn(n)+"/৮";$("s2").textContent=admin?tk(p):"🔒";$("s3").textContent=admin?tk(t-p):"🔒";
+$("ls").innerHTML=l||'<div class="empty">এখনো কোনো বুকিং নেই</div>'}
+$("g").onclick=function(e){var b=e.target.closest(".room");if(!b)return;
+cur=+b.dataset.r;var d=data[cur]||{};
+$("tt").textContent="রুম "+bn(cur);
+setKind(d.kind||"কাপল");$("nm").value=d.nm||"";$("ph").value=d.ph||"";$("dt").value=trips[ti].dt||"";$("tot").value=d.tot||"";$("pd").value=d.pd||"";
+$("money").style.display=admin?"grid":"none";$("cl").style.display=(admin&&data[cur])?"block":"none";$("ov").classList.add("on")};
+$("cx").onclick=function(){$("ov").classList.remove("on")};
+$("ov").onclick=function(e){if(e.target.id==="ov")$("ov").classList.remove("on")};
+$("sv").onclick=function(){
+var o=data[cur]||{},nm=$("nm").value.trim(),tot=admin?(+$("tot").value||0):(o.tot||0),pd=admin?(+$("pd").value||0):(o.pd||0);
+if(!nm){alert("অতিথির নাম দিন");return}
+data[cur]={kind:kind,nm:nm,ph:$("ph").value.trim(),tot:tot,pd:pd};
+save();$("ov").classList.remove("on");render()};
+$("cl").onclick=function(){if(confirm("রুম "+bn(cur)+" এর বুকিং মুছবেন?")){delete data[cur];save();$("ov").classList.remove("on");render()}};
+$("lo").onclick=function(){if(admin){admin=false}else{var x=prompt("অ্যাডমিন পিন দিন");if(x===null)return;if(x!==ADMIN_PIN){alert("পিন ভুল");return}admin=true}
+$("lo").textContent=admin?"লগআউট":"অ্যাডমিন লগইন";$("md").textContent=admin?"অ্যাডমিন – বুকিং ও হিসাব":"অতিথি মোড – শুধু বুকিং";render()};
+$("en").oninput=function(){trips[ti].name=this.value;save();tabs()};
+$("td").onchange=function(){trips[ti].dt=this.value;save();tabs()};
+tabs();render();
+})();
+(function(){var h=document.getElementById("home"),b=document.getElementById("book"),nb=document.querySelectorAll("#nav button");
+function go(v){h.hidden=v!=="home";b.hidden=v!=="book";nb.forEach(function(x){x.classList.toggle("on",x.dataset.v===v)});window.scrollTo(0,0)}
+nb.forEach(function(x){x.onclick=function(){go(x.dataset.v)}});
+go(location.hash==="#booking"?"book":"home")})();
+</script>
+</body></html>
